@@ -1,0 +1,5 @@
+@use "../abstracts/" as *;
+.horizontal-line{
+    background-color: $color-neutral-150;
+    height: 1px;
+}

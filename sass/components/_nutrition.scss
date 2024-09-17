@@ -3,10 +3,13 @@
 .nutrition-data{
     
     &-grid{
+        list-style: none;
+        & > *:not(:last-of-type){
+            margin-bottom: $size-3;
+        }
         &-row{
             display: flex;
             padding-inline: $size-8;
-            position: relative;
             
             & > *{
                 flex-basis: 50%;
@@ -15,13 +18,7 @@
             & > *:last-child{
                 font-weight: $font-weight-bold;
                 color: $color-primary-800;
-            }
-            &[data-type="separator"]{
-                background-color: $color-neutral-150;
-                height: 1px;
-                margin-block: $size-3;
-            }
-            
+            }     
         }
     }
 }
