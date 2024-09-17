@@ -6,6 +6,10 @@
 
   width: min(100% - var(--padding), var(--max-width));
   margin-inline: auto;
+  @include mq(medium){
+    margin-top: $size-14;
+    border-radius: $border-radius-2;
+  }
 }
 
 .container[data-type="narrow"] {

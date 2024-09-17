@@ -1,0 +1,38 @@
+@use "../abstracts/" as *;
+
+.list{
+
+    list-style: none;
+    display: grid;
+    gap: $size-2;
+    counter-reset: list-counter;
+    
+    &-item{
+         position: relative;
+         padding-left: $size-9;
+         counter-increment: list-counter;
+
+         .list[data-type="ul"] &::before{
+            content: "•"; /* Aggiunge il bullet manualmente */
+            font-weight: $font-weight-bold;
+            position: absolute;
+            left: $size-2; /* Posiziona il numero a sinistra */
+            color: $color-accent-800; /* Colore del bullet */
+            font-size: 1.2em; /* Dimensione del bullet */ 
+         }
+
+         .list[data-type="ol"] &::before{
+            content: counter(list-counter) ". "; /* Inserisce il numero seguito da un punto */
+            position: absolute;
+            left: $size-2; /* Posiziona il numero a sinistra */
+            font-weight: bold; /* Personalizza lo stile del numero */
+            color: $color-primary-800;
+            font-weight: $font-weight-bold;
+            
+         }
+        
+    }
+    &-title{
+        font-weight: $font-weight-bold;
+    }
+}

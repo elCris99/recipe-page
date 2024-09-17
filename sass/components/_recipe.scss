@@ -1,0 +1,32 @@
+@use "../abstracts/" as *;
+
+.recipe{
+
+    display: grid;
+    
+     &-hero{
+        margin-left: calc($container-min-margin-inline * -1);
+        margin-right: calc($container-min-margin-inline * -1);
+
+        @include mq(medium){
+            margin-left: auto;
+            margin-right: auto;
+            padding: $recipe-body-padding;
+            padding-bottom: 0;
+
+            img{
+                border-radius: $border-radius-1;
+            }
+        }
+     }
+
+     &-body{
+        padding: $recipe-body-padding;
+        display: grid;
+        gap: $recipe-body-gap;
+     }
+
+     .heading-2{
+        margin-bottom: $size-6;
+     }
+}
